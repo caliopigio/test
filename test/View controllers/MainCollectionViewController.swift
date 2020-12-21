@@ -7,11 +7,10 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
-
 class MainCollectionViewController: UICollectionViewController {
     
     private var filmViewModel: FilmViewModel!
+    private let reuseIdentifier = "Cell"
 
     // MARK: UIViewController
     
@@ -21,9 +20,9 @@ class MainCollectionViewController: UICollectionViewController {
         // Register cell classes
         self.collectionView!.register(FilmCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
-        navigationItem.title = "Ghibli Studio Films"
+        navigationItem.title = "Studio Ghibli Films"
         
-        filmViewModel = FilmViewModel()
+        filmViewModel = FilmViewModel(identifier: nil)
         
         filmViewModel.modelUpdated = {
             OperationQueue.main.addOperation {
@@ -62,37 +61,23 @@ class MainCollectionViewController: UICollectionViewController {
     }
 
     // MARK: UICollectionViewDelegate
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
     
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let layout = UICollectionViewFlowLayout()
+        
+        layout.scrollDirection = .horizontal
+        
+        let detailViewController = DetailCollectionViewController(collectionViewLayout: layout)
+        let item = filmViewModel.films[indexPath.row]
+        
+        detailViewController.filmIdentifier = item.identifier
+        detailViewController.vehiclesUrl = item.vehiclesUrl.first
+        
+        showDetailViewController(detailViewController, sender: nil)
     }
-    */
-
 }
+
+// MARK: UICollectionViewDelegateFlowLayout
 
 extension MainCollectionViewController: UICollectionViewDelegateFlowLayout {
     

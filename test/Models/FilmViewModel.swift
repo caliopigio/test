@@ -19,17 +19,23 @@ class FilmViewModel {
     
     var modelUpdated: (() -> ()) = {}
     
-    init() {
+    init(identifier: String?) {
         self.films = []
         
-        getRemoteData()
+        getRemoteData(identifier: identifier)
     }
     
     // MARK: FilmViewModel
     
-    func getRemoteData() {
-        webService.getMovies { (films) in
-            self.films = films
+    func getRemoteData(identifier: String?) {
+        if let identifier = identifier {
+            webService.getFilm(identifier) { (films) in
+                self.films = films
+            }
+        } else {
+            webService.getFilms { (films) in
+                self.films = films
+            }
         }
     }
 }

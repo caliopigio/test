@@ -16,6 +16,7 @@ struct Film: Decodable {
     let producer: String
     let releaseYear: String
     let rating: String
+    let vehiclesUrl: [URL]
     
     enum CodingKeys: String, CodingKey {
         case identifier = "id"
@@ -25,5 +26,6 @@ struct Film: Decodable {
         case producer = "producer"
         case releaseYear = "release_date"
         case rating = "rt_score"
+        case vehiclesUrl = "vehicles"
     }
 }
