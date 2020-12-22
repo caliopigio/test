@@ -7,14 +7,66 @@
 
 import UIKit
 
-class DetailHeaderView: UICollectionReusableView {
+class DetailHeaderView: UIView {
         
-    let titleLabel = UILabel()
-    let detailsLabel =  UILabel()
-    let directorLabel =  UILabel()
-    let producerLabel = UILabel()
-    let yearLabel = UILabel()
-    let ratingLabel = UILabel()
+    let titleLabel: UILabel = {
+        let label = UILabel()
+        
+        label.font = UIFont.preferredFont(forTextStyle: .largeTitle)
+        label.numberOfLines = 0
+        label.textColor = .secondaryLabel
+        
+        return label
+    }()
+    
+    let detailsLabel:  UILabel = {
+        let label = UILabel()
+        
+        label.font = UIFont.preferredFont(forTextStyle: .body)
+        label.numberOfLines = 0
+        
+        return label
+    }()
+    
+    let directorLabel:  UILabel = {
+        let label = UILabel()
+        
+        label.font = UIFont.preferredFont(forTextStyle: .title3)
+        label.numberOfLines = 0
+        label.textColor = .secondaryLabel
+        
+        return label
+    }()
+    
+    let producerLabel:  UILabel = {
+        let label = UILabel()
+        
+        label.font = UIFont.preferredFont(forTextStyle: .title3)
+        label.numberOfLines = 0
+        label.textColor = .secondaryLabel
+        
+        return label
+    }()
+    
+    let yearLabel:  UILabel = {
+        let label = UILabel()
+        
+        label.font = UIFont.preferredFont(forTextStyle: .title3)
+        label.numberOfLines = 0
+        label.textColor = .secondaryLabel
+        
+        return label
+    }()
+    
+    let ratingLabel:  UILabel = {
+        let label = UILabel()
+        
+        label.font = UIFont.preferredFont(forTextStyle: .title3)
+        label.numberOfLines = 0
+        label.textColor = .secondaryLabel
+        
+        return label
+    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -33,6 +85,7 @@ class DetailHeaderView: UICollectionReusableView {
         
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .vertical
+        stack.spacing = 10
         stack.addArrangedSubview(titleLabel)
         stack.addArrangedSubview(detailsLabel)
         stack.addArrangedSubview(directorLabel)
@@ -42,9 +95,10 @@ class DetailHeaderView: UICollectionReusableView {
         
         addSubview(stack)
         
-        NSLayoutConstraint.activate([stack.leadingAnchor.constraint(equalTo: leadingAnchor),
-                                     stack.trailingAnchor.constraint(equalTo: trailingAnchor),
-                                     stack.topAnchor.constraint(equalTo: topAnchor),
-                                     stack.bottomAnchor.constraint(equalTo: bottomAnchor)])
+        NSLayoutConstraint.activate(
+            [stack.leadingAnchor.constraint(equalTo: leadingAnchor),
+             stack.trailingAnchor.constraint(equalTo: trailingAnchor),
+             stack.topAnchor.constraint(equalTo: topAnchor),
+             stack.bottomAnchor.constraint(equalTo: bottomAnchor)])
     }
 }

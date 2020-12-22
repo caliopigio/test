@@ -16,6 +16,9 @@ class MainCollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        view.backgroundColor = .systemBackground
+        collectionView.backgroundColor = .systemBackground
 
         // Register cell classes
         self.collectionView!.register(FilmCell.self, forCellWithReuseIdentifier: reuseIdentifier)
@@ -34,10 +37,8 @@ class MainCollectionViewController: UICollectionViewController {
     // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        
         return 1
     }
-
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return filmViewModel.films.count
@@ -45,13 +46,6 @@ class MainCollectionViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! FilmCell
-        
-    
-        if indexPath.row % 2 == 0 {
-            cell.backgroundColor = .red
-        } else {
-            cell.backgroundColor = .blue
-        }
         
         let item = filmViewModel.films[indexPath.row]
         cell.title.text = item.title
@@ -63,11 +57,7 @@ class MainCollectionViewController: UICollectionViewController {
     // MARK: UICollectionViewDelegate
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let layout = UICollectionViewFlowLayout()
-        
-        layout.scrollDirection = .horizontal
-        
-        let detailViewController = DetailCollectionViewController(collectionViewLayout: layout)
+        let detailViewController = DetailViewController()
         let item = filmViewModel.films[indexPath.row]
         
         detailViewController.filmIdentifier = item.identifier
@@ -82,6 +72,6 @@ class MainCollectionViewController: UICollectionViewController {
 extension MainCollectionViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width - 30, height: 100)
+        return CGSize(width: collectionView.frame.width - 20, height: 100)
     }
 }

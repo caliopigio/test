@@ -1,26 +1,28 @@
 //
-//  FilmViewCell.swift
+//  VehicleCell.swift
 //  test
 //
-//  Created by Carlos Larrañaga Calmet on 20/12/20.
+//  Created by Carlos Larrañaga Calmet on 22/12/20.
 //
 
 import UIKit
 
-class FilmCell: UICollectionViewCell {
+class VehicleCell: UICollectionViewCell {
     
-    let title: UILabel = {
+    let name: UILabel = {
         let label = UILabel()
         
-        label.font = UIFont.preferredFont(forTextStyle: .title2)
+        label.font = UIFont.preferredFont(forTextStyle: .body)
+        label.numberOfLines = 0
         
         return label
     }()
     
-    let year: UILabel = {
+    let type: UILabel = {
         let label = UILabel()
         
-        label.font = UIFont.preferredFont(forTextStyle: .body)
+        label.font = UIFont.preferredFont(forTextStyle: .subheadline)
+        label.numberOfLines = 0
         label.textColor = .secondaryLabel
         
         return label
@@ -36,7 +38,7 @@ class FilmCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: FilmCell
+    // MARK: VehicleCell
     
     func setupCell() {
         backgroundColor = .secondarySystemBackground
@@ -45,8 +47,8 @@ class FilmCell: UICollectionViewCell {
         
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .vertical
-        stack.addArrangedSubview(title)
-        stack.addArrangedSubview(year)
+        stack.addArrangedSubview(name)
+        stack.addArrangedSubview(type)
         
         addSubview(stack)
         

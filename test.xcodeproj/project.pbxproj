@@ -7,11 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F087173259256DB00AC7322 /* VehicleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F087172259256DB00AC7322 /* VehicleCell.swift */; };
 		2F49C5CE258FF1C700EE9CBA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F49C5CD258FF1C700EE9CBA /* AppDelegate.swift */; };
 		2F49C5D0258FF1C700EE9CBA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F49C5CF258FF1C700EE9CBA /* SceneDelegate.swift */; };
 		2F49C5D7258FF1CD00EE9CBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F49C5D6258FF1CD00EE9CBA /* Assets.xcassets */; };
 		2F49C5DA258FF1CD00EE9CBA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F49C5D8258FF1CD00EE9CBA /* LaunchScreen.storyboard */; };
-		2F634C652590DD2F00FFF821 /* DetailCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F634C642590DD2F00FFF821 /* DetailCollectionViewController.swift */; };
+		2F634C652590DD2F00FFF821 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F634C642590DD2F00FFF821 /* DetailViewController.swift */; };
 		2F971F2D2590270B00913ADD /* FilmCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F971F2C2590270B00913ADD /* FilmCell.swift */; };
 		2FD8FE3F25900ACF0069D9B3 /* MainCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD8FE3E25900ACF0069D9B3 /* MainCollectionViewController.swift */; };
 		2FD8FE4225900C580069D9B3 /* Film.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD8FE4125900C580069D9B3 /* Film.swift */; };
@@ -23,13 +24,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2F087172259256DB00AC7322 /* VehicleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleCell.swift; sourceTree = "<group>"; };
 		2F49C5CA258FF1C700EE9CBA /* test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F49C5CD258FF1C700EE9CBA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2F49C5CF258FF1C700EE9CBA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		2F49C5D6258FF1CD00EE9CBA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2F49C5D9258FF1CD00EE9CBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2F49C5DB258FF1CD00EE9CBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2F634C642590DD2F00FFF821 /* DetailCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCollectionViewController.swift; sourceTree = "<group>"; };
+		2F634C642590DD2F00FFF821 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		2F971F2C2590270B00913ADD /* FilmCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmCell.swift; sourceTree = "<group>"; };
 		2FD8FE3E25900ACF0069D9B3 /* MainCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewController.swift; sourceTree = "<group>"; };
 		2FD8FE4125900C580069D9B3 /* Film.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Film.swift; sourceTree = "<group>"; };
@@ -87,7 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				2FD8FE3E25900ACF0069D9B3 /* MainCollectionViewController.swift */,
-				2F634C642590DD2F00FFF821 /* DetailCollectionViewController.swift */,
+				2F634C642590DD2F00FFF821 /* DetailViewController.swift */,
 			);
 			path = "View controllers";
 			sourceTree = "<group>";
@@ -107,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				2F971F2C2590270B00913ADD /* FilmCell.swift */,
+				2F087172259256DB00AC7322 /* VehicleCell.swift */,
 				2FFD895A2590E93C0029C445 /* DetailHeaderView.swift */,
 			);
 			path = "Custom views";
@@ -181,6 +184,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F087173259256DB00AC7322 /* VehicleCell.swift in Sources */,
 				2F971F2D2590270B00913ADD /* FilmCell.swift in Sources */,
 				2FD8FE3F25900ACF0069D9B3 /* MainCollectionViewController.swift in Sources */,
 				2FFD89612590F9820029C445 /* VehiclesViewModel.swift in Sources */,
@@ -188,7 +192,7 @@
 				2F49C5CE258FF1C700EE9CBA /* AppDelegate.swift in Sources */,
 				2FD8FE4925900D3F0069D9B3 /* WebServicesHelper.swift in Sources */,
 				2F49C5D0258FF1C700EE9CBA /* SceneDelegate.swift in Sources */,
-				2F634C652590DD2F00FFF821 /* DetailCollectionViewController.swift in Sources */,
+				2F634C652590DD2F00FFF821 /* DetailViewController.swift in Sources */,
 				2FD8FE4225900C580069D9B3 /* Film.swift in Sources */,
 				2FD8FE4625900CFD0069D9B3 /* FilmViewModel.swift in Sources */,
 				2FFD895B2590E93C0029C445 /* DetailHeaderView.swift in Sources */,

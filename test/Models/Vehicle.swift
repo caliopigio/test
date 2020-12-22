@@ -9,17 +9,17 @@ import Foundation
 
 struct Vehicle: Decodable {
     
-    //let identifier: String
+    let identifier: String
     let name: String
-    /*let details: String
-    let vehiculeClass: String
-    let lenght: String*/
+    let details: String
+    let vehicleClass: String
+    let length: String
     
     enum CodingKeys: String, CodingKey {
-        //case identifier = "id"
+        case identifier = "id"
         case name = "name"
-        /*case details = "description"
-        case vehiculeClass = "vehicule_class"
-        case lenght = "lenght"*/
+        case details = "description"
+        case vehicleClass = "vehicle_class"
+        case length = "length"
     }
 }
